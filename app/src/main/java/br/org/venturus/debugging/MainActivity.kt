@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var textMessage: TextView
 
-    private lateinit var name: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +27,7 @@ class MainActivity : AppCompatActivity() {
 
 
         messageButton.setOnClickListener {
+            val name = editTextName.text.toString()
             textMessage.text = name
         }
 
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
                 messageButton.visibility = View.INVISIBLE
                 textMessage.text = ""
             } else {
-                name = editTextName.text.toString()
+
                 messageButton.visibility = View.VISIBLE
             }
         }
